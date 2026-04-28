@@ -1,15 +1,15 @@
-# Course Management System 🎓
+# Course Management System 
 
 A comprehensive Client-Server application designed for educational institutions, training centers, and active learning environments. It allows administrators to manage courses, track live attendance, organize study modules, and provides students with a dashboard to track their badges and progress.
 
-## 🏗️ Architecture
+##  Architecture
 
 The application is built using a modern decoupled architecture:
 - **Backend (Server):** Spring Boot REST API
 - **Frontend (Client):** JavaFX Desktop Application
 - **Database:** Microsoft SQL Server
 
-## ✨ Key Features
+##  Key Features
 
 - **User Management & Authentication:** Secure login for different roles (Admin, Trainer, Student).
 - **Course & Module Management:** Create, edit, and categorize courses. Add learning modules to specific courses.
@@ -18,7 +18,7 @@ The application is built using a modern decoupled architecture:
 - **Responsive & Modern UI:** Features a sleek Dark Mode and fluid components built with JavaFX and CSS.
 - **Advanced SQL Interactions:** Employs complex native SQL queries for efficient data aggregation and statistical reporting.
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 ### Server Side
 - Java 21+
@@ -34,7 +34,7 @@ The application is built using a modern decoupled architecture:
 
 ---
 
-## 🚀 How to Run the Project Locally
+##  How to Run the Project Locally
 
 ### 1. Database Setup
 The application requires a Microsoft SQL Server instance.
@@ -67,7 +67,7 @@ The application requires a Microsoft SQL Server instance.
 
 ---
 
-## 📖 How to Use the Application
+##  How to Use the Application
 
 Once both the server and client are running, follow this basic workflow to explore the application's features.
 
@@ -98,7 +98,7 @@ Collaborators have restricted access, focused solely on managing live sessions:
 
 ---
 
-## 📂 Project Structure
+##  Project Structure
 
 ```
 CourseManagementApp/
@@ -113,7 +113,7 @@ CourseManagementApp/
 └── README.md               # Project documentation
 ```
 
-## 📸 Screenshots
+##  Screenshots
 
 ### Authentication
 ![Login Screen](img/auth.png)
@@ -134,5 +134,4 @@ CourseManagementApp/
 ![User Manager](img/user-manager.png)
 ![Badges and Progress](img/badge-progress-enroll.png)
 
-## 📄 License
 This project was created for educational purposes.
