@@ -1,0 +1,16 @@
+open module com.osf.coursemanagement.server {
+	requires spring.boot;
+	requires spring.boot.autoconfigure;
+	requires spring.context;
+	requires spring.beans;
+	requires spring.web;
+	requires spring.data.jpa;
+	requires jakarta.persistence; // For JPA entities
+	requires lombok; // For compile-time annotations
+
+	// Export service and model packages so they can be seen if needed (though open
+	// module handles reflection)
+	exports com.osf.coursemanagement.server.service;
+	exports com.osf.coursemanagement.server.model;
+	exports com.osf.coursemanagement.server.repository;
+}

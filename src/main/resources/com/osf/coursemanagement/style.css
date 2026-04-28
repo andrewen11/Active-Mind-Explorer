@@ -1,0 +1,589 @@
+/*
+   ==========================================================================
+   1. GLOBAL & ROOT STYLES
+   ==========================================================================
+*/
+
+.root-background {
+	-fx-background-color: linear-gradient(to bottom, #39b3e8, #3777e6, #553bf9);
+	-fx-padding: 30;
+	-fx-font-family: 'Segoe UI', sans-serif;
+}
+
+.dashboard-root {
+	-fx-background-color: linear-gradient(to bottom right, #f5f7fa 0%, #c3cfe2 100%);
+	-fx-font-family: 'Segoe UI', sans-serif;
+}
+
+/*
+   ==========================================================================
+   2. CONTAINERS & CARDS
+   ==========================================================================
+*/
+
+.card {
+	-fx-background-color: rgba(255, 255, 255, 0.15);
+	-fx-background-radius: 15;
+	-fx-padding: 25;
+	-fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.25), 20, 0.3, 0, 8);
+}
+
+.header-container {
+	-fx-background-color: rgba(255, 255, 255, 0.85);
+	-fx-background-radius: 0 0 30 30;
+	-fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.1), 10, 0, 0, 5);
+	-fx-padding: 15;
+}
+
+.detail-panel-container {
+	-fx-background-color: rgba(255, 255, 255, 0.9);
+	-fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.15), 10, 0, 0, 5);
+	-fx-border-radius: 15;
+	-fx-border-width: 1;
+	-fx-border-color: rgba(255, 255, 255, 0.6);
+}
+
+.dashboard-panel {
+	-fx-background-color: rgba(255, 255, 255, 0.9);
+	-fx-background-radius: 15;
+	-fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.1), 10, 0, 0, 5);
+	-fx-padding: 20;
+	-fx-alignment: TOP_CENTER;
+	-fx-border-width: 0;
+}
+
+/* Dashboard Panel Specific Colors */
+#panelUsers {
+	-fx-background-color: #3498db;
+}
+
+#panelCourses {
+	-fx-background-color: #2ecc71;
+}
+
+#panelModules {
+	-fx-background-color: #9b59b6;
+}
+
+#panelProgress {
+	-fx-background-color: #e67e22;
+}
+
+/*
+   ==========================================================================
+   3. TEXT & LABELS
+   ==========================================================================
+*/
+
+.label {
+	-fx-text-fill: #2c3e50;
+	/* Default Text Color */
+}
+
+.field-label {
+	-fx-font-size: 14px;
+	-fx-font-weight: bold;
+	-fx-text-fill: #2c3e50;
+	-fx-padding: 0 0 2 0;
+}
+
+.dark-theme .field-label,
+.root-background .field-label {
+	-fx-text-fill: white;
+}
+
+.field_label {
+	-fx-text-fill: white;
+}
+
+.field_label2 {
+	-fx-text-fill: black;
+}
+
+.title-label {
+	-fx-font-size: 22px;
+	-fx-font-weight: bold;
+	-fx-text-fill: white;
+}
+
+.title_label {
+	-fx-font-size: 22px;
+	-fx-font-weight: bold;
+	-fx-text-fill: black;
+}
+
+.error-label {
+	-fx-text-fill: white;
+	-fx-font-size: 20px;
+	-fx-font-weight: bold;
+}
+
+.greeting-header {
+	-fx-font-size: 50px;
+	-fx-font-weight: bold;
+	-fx-text-fill: #2c3e50;
+	-fx-padding: 0 0 2 0;
+}
+
+.greeting-text {
+	-fx-font-size: 24px;
+	-fx-text-fill: #7f8c8d;
+}
+
+.role-text {
+	-fx-font-size: 24px;
+	-fx-font-weight: bold;
+	-fx-text-fill: #7f8c8d;
+}
+
+.panel-title {
+	-fx-font-size: 18px;
+	-fx-font-weight: bold;
+	-fx-text-fill: white;
+	-fx-padding: 10 0 15 0;
+}
+
+/*
+   ==========================================================================
+   4. BUTTONS
+   ==========================================================================
+*/
+
+/* Standard Blue Button */
+.main-button {
+	-fx-background-color: #0078d7;
+	-fx-font-weight: bold;
+	-fx-text-fill: white;
+	-fx-background-radius: 20;
+	-fx-font-size: 16px;
+	-fx-padding: 10 20;
+	-fx-cursor: hand;
+	-fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 4, 0.3, 0, 2);
+}
+
+.main-button:hover {
+	-fx-background-color: #005fa1;
+}
+
+.main-button:pressed {
+	-fx-background-color: #004a80;
+}
+
+/* Dashboard Action Buttons (Red) */
+.action-button {
+	-fx-text-fill: white;
+	-fx-font-weight: bold;
+	-fx-background-radius: 10;
+	-fx-cursor: hand;
+	-fx-font-size: 14px;
+	-fx-padding: 10 20;
+	-fx-background-color: #cd3030;
+}
+
+.action-button:hover {
+	-fx-background-color: #b32424;
+}
+
+/* Panel Buttons (Transparent/White) */
+.panel-button {
+	-fx-background-color: transparent;
+	-fx-text-fill: white;
+	-fx-font-size: 14px;
+	-fx-alignment: CENTER_LEFT;
+	-fx-padding: 8 15;
+	-fx-background-radius: 5;
+	-fx-cursor: hand;
+	-fx-border-color: rgba(255, 255, 255, 0.4);
+	-fx-border-width: 0 0 1 0;
+}
+
+.panel-button:hover {
+	-fx-background-color: rgba(255, 255, 255, 0.15);
+	-fx-text-fill: white;
+}
+
+/* Outline Buttons */
+.outline-button {
+	-fx-background-color: transparent;
+	-fx-text-fill: white;
+	-fx-font-weight: bold;
+	-fx-background-radius: 30;
+	-fx-border-radius: 30;
+	-fx-border-color: white;
+	-fx-border-width: 3;
+	-fx-font-size: 18px;
+	-fx-padding: 10 25;
+	-fx-cursor: hand;
+}
+
+.outline-button:hover {
+	-fx-background-color: white;
+	-fx-text-fill: #553bf9;
+	-fx-border-color: white;
+}
+
+
+/*
+   ==========================================================================
+   5. INPUTS (TextField, ComboBox)
+   ==========================================================================
+*/
+
+.text-field,
+.text-area {
+	-fx-background-radius: 20;
+	-fx-background-color: rgba(255, 255, 255, 0.85);
+	-fx-padding: 8 15;
+	-fx-font-weight: normal;
+	/* Fixed: standard weight, not bold */
+	-fx-font-size: 14px;
+}
+
+/* Custom List Item (Badges View) */
+.custom-list-view {
+	-fx-border-color: #ddd;
+	-fx-border-radius: 5;
+	-fx-padding: 10;
+	-fx-background-color: rgba(255, 255, 255, 0.5);
+	/* Light translucent background */
+}
+
+.dark-theme .custom-list-view {
+	-fx-border-color: rgba(255, 255, 255, 0.2);
+	-fx-background-color: rgba(0, 0, 0, 0.2);
+	/* Dark translucent background */
+}
+
+/*
+   ==========================================================================
+   6. LISTS (ListView)
+   ==========================================================================
+*/
+
+.list-view {
+	-fx-background-color: transparent;
+	-fx-padding: 10;
+}
+
+.list-view .list-cell {
+	-fx-background-color: rgba(255, 255, 255, 0.8);
+	-fx-text-fill: #2c3e50;
+	-fx-padding: 10 10;
+	-fx-font-size: 20px;
+	-fx-font-weight: bold;
+	-fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 5, 0, 0, 2);
+	-fx-cell-size: 50px;
+	-fx-border-width: 0 0 5 0;
+	-fx-border-color: transparent;
+}
+
+.list-view .list-cell:filled:hover {
+	-fx-background-color: rgba(255, 255, 255, 0.95);
+	-fx-cursor: hand;
+	-fx-translate-y: -1;
+}
+
+.list-view .list-cell:filled:selected,
+.list-view .list-cell:filled:selected:hover {
+	-fx-background-color: #3498db;
+	-fx-text-fill: white;
+	-fx-effect: dropshadow(gaussian, rgba(52, 152, 219, 0.4), 8, 0, 0, 2);
+}
+
+.list-view .list-cell:empty {
+	-fx-background-color: transparent;
+	-fx-border-color: transparent;
+	-fx-effect: null;
+}
+
+/*
+   ==========================================================================
+   7. DARK THEME OVERRIDES
+   ==========================================================================
+*/
+
+.dark-theme {
+	-fx-background-color: #2c3e50;
+}
+
+/* Headers & Text */
+.dark-theme .greeting-header {
+	-fx-text-fill: #ecf0f1;
+}
+
+.dark-theme .greeting-text {
+	-fx-text-fill: #bdc3c7;
+}
+
+.dark-theme .role-text {
+	-fx-text-fill: #95a5a6;
+}
+
+.dark-theme .panel-title {
+	-fx-text-fill: white;
+}
+
+.dark-theme .header-container {
+	-fx-background-color: #34495e;
+	-fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.3), 10, 0, 0, 5);
+}
+
+/* Panels */
+.dark-theme .dashboard-panel {
+	-fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.5), 10, 0, 0, 5);
+}
+
+.dark-theme .detail-panel-container {
+	-fx-background-color: rgba(44, 62, 80, 0.9);
+	-fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0, 0, 5);
+	-fx-border-color: rgba(255, 255, 255, 0.1);
+}
+
+.dark-theme .detail-panel-container .label {
+	-fx-text-fill: white;
+}
+
+/* Panel Buttons */
+.dark-theme .panel-button {
+	-fx-text-fill: white;
+	-fx-border-color: rgba(255, 255, 255, 0.3);
+}
+
+.dark-theme .outline-button:hover {
+	-fx-background-color: white;
+	-fx-text-fill: #34495e;
+	-fx-border-color: white;
+}
+
+/* List Views in Dark Mode */
+.dark-theme .list-view .list-cell {
+	-fx-background-color: rgba(44, 62, 80, 0.8);
+	-fx-text-fill: #ecf0f1;
+}
+
+.dark-theme .list-view .list-cell:filled:hover {
+	-fx-background-color: rgba(52, 73, 94, 0.9);
+}
+
+.dark-theme .list-view .list-cell:filled:selected {
+	-fx-background-color: #2980b9;
+	-fx-text-fill: white;
+}
+
+/*
+   ==========================================================================
+   8. DIALOGS (Dark Mode Optimized)
+   ==========================================================================
+*/
+
+/* Background & Structure */
+.combo-box,
+.dialog-pane .text-field,
+.dialog-pane .combo-box,
+.dialog-pane .text-area {
+	-fx-padding: 3 10;
+	-fx-prompt-text-weight: normal;
+	-fx-font-size: 14px;
+	-fx-border-radius: 5;
+	-fx-prompt-text-fill: #707070;
+	-fx-border-width: 1;
+}
+
+.dialog-pane.dark-theme {
+	-fx-background-color: #2c3e50;
+}
+
+.dialog-pane.dark-theme>.header-panel {
+	-fx-background-color: #34495e;
+	-fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 5, 0, 0, 2);
+}
+
+.dialog-pane.dark-theme>.button-bar {
+	-fx-background-color: #2c3e50;
+}
+
+/* Text colors */
+.dialog-pane.dark-theme .label,
+.dialog-pane.dark-theme .header-panel .label,
+.dialog-pane.dark-theme>.content .label {
+	-fx-text-fill: white;
+}
+
+/* Input Fields (Dark Background, White Text, Standard Font) */
+.dark-theme .text-field,
+.dark-theme .text-area,
+.dialog-pane.dark-theme .text-field,
+.dialog-pane.dark-theme .text-area {
+	-fx-background-color: #34495e;
+	-fx-control-inner-background: #34495e;
+	-fx-text-fill: white;
+	-fx-prompt-text-fill: #95a5a6;
+	-fx-border-color: #bdc3c7;
+	-fx-border-radius: 5;
+	-fx-background-radius: 5;
+	-fx-padding: 3 10;
+	-fx-font-style: normal;
+	-fx-font-weight: normal;
+}
+
+/* Fix for TextArea internal structure in Dark Mode */
+.dark-theme .text-area .content,
+.dark-theme .text-area .viewport,
+.dialog-pane.dark-theme .text-area .content,
+.dialog-pane.dark-theme .text-area .viewport {
+	-fx-background-color: transparent;
+}
+
+/* ComboBox (Matching Input Fields) */
+.dark-theme .combo-box,
+.dialog-pane.dark-theme .combo-box {
+	-fx-background-color: #34495e;
+	-fx-background-radius: 5;
+	-fx-border-color: #bdc3c7;
+	-fx-border-radius: 5;
+	-fx-padding: 3 10;
+}
+
+.dark-theme .combo-box .list-cell,
+.dialog-pane.dark-theme .combo-box .list-cell {
+	-fx-text-fill: white;
+	-fx-background-color: transparent;
+}
+
+
+/* ComboBox Popup - Generic Size/Structure Reset (Light & Dark) */
+.combo-box-popup .list-cell,
+.dialog-pane .combo-box-popup .list-cell {
+	-fx-font-size: 13px;
+	-fx-font-weight: normal;
+	-fx-cell-size: 24px;
+	-fx-padding: 3 10;
+	-fx-alignment: CENTER_LEFT;
+}
+
+/* Dark Mode Overrides for ComboBox Popup */
+.dark-theme .combo-box-popup .list-view,
+.dialog-pane.dark-theme .combo-box-popup .list-view {
+	-fx-background-color: #2c3e50;
+	-fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 5, 0, 0, 1);
+}
+
+.dark-theme .combo-box-popup .list-cell,
+.dialog-pane.dark-theme .combo-box-popup .list-cell {
+	-fx-text-fill: white;
+	-fx-background-color: #2c3e50;
+}
+
+.combo-box-popup .list-cell:filled:hover,
+.combo-box-popup .list-cell:filled:selected,
+.dialog-pane.dark-theme .combo-box-popup .list-cell:filled:hover,
+.dialog-pane.dark-theme .combo-box-popup .list-cell:filled:selected {
+	-fx-background-color: #3498db;
+	-fx-text-fill: white;
+}
+
+/* Dialog Buttons (Save/Cancel) - Dark Mode */
+.dialog-pane.dark-theme .button {
+	-fx-background-color: #34495e;
+	/* Dark Grey/Blue */
+	-fx-text-fill: white;
+	-fx-border-color: white;
+	-fx-border-radius: 5;
+	-fx-background-radius: 5;
+	-fx-cursor: hand;
+}
+
+.dialog-pane.dark-theme .button:hover {
+	-fx-background-color: #2c3e50;
+	/* Slightly darker on hover */
+	-fx-border-color: #bdc3c7;
+}
+
+/*
+   ==========================================================================
+   9. TABLE VIEW (Dark Mode)
+   ==========================================================================
+*/
+
+.dark-theme .table-view,
+.dialog-pane.dark-theme .table-view {
+	-fx-background-color: transparent;
+	-fx-table-cell-border-color: transparent;
+}
+
+.dark-theme .table-view .column-header-background,
+.dialog-pane.dark-theme .table-view .column-header-background {
+	-fx-background-color: #34495e;
+	-fx-background-radius: 5 5 0 0;
+}
+
+.dark-theme .table-view .column-header,
+.dialog-pane.dark-theme .table-view .column-header {
+	-fx-background-color: transparent;
+	-fx-padding: 10;
+}
+
+.dark-theme .table-view .column-header .label,
+.dialog-pane.dark-theme .table-view .column-header .label {
+	-fx-text-fill: white;
+	-fx-font-weight: bold;
+}
+
+.dark-theme .table-view .table-cell,
+.dialog-pane.dark-theme .table-view .table-cell {
+	-fx-text-fill: white;
+}
+
+.dark-theme .table-view .table-row-cell,
+.dialog-pane.dark-theme .table-view .table-row-cell {
+	-fx-background-color: #2c3e50;
+	-fx-border-color: transparent transparent rgba(255, 255, 255, 0.1) transparent;
+}
+
+.dark-theme .table-view .table-row-cell:odd,
+.dialog-pane.dark-theme .table-view .table-row-cell:odd {
+	-fx-background-color: rgba(52, 73, 94, 0.5);
+}
+
+.dark-theme .table-view .table-row-cell:hover,
+.dialog-pane.dark-theme .table-view .table-row-cell:hover {
+	-fx-background-color: #34495e;
+}
+
+.dark-theme .table-view .table-row-cell:empty,
+.dialog-pane.dark-theme .table-view .table-row-cell:empty,
+.dark-theme .table-view .virtual-flow .viewport,
+.dialog-pane.dark-theme .table-view .virtual-flow .viewport {
+    -fx-background-color: transparent;
+}
+
+.dark-theme .table-view .table-row-cell:selected,
+.dialog-pane.dark-theme .table-view .table-row-cell:selected {
+	-fx-background-color: #2980b9;
+	-fx-text-fill: white;
+}
+
+/* Scrollbars in Dark Mode */
+.dark-theme .scroll-bar:vertical .track,
+.dark-theme .scroll-bar:horizontal .track,
+.dialog-pane.dark-theme .scroll-bar:vertical .track,
+.dialog-pane.dark-theme .scroll-bar:horizontal .track {
+	-fx-background-color: #2c3e50;
+	-fx-border-color: transparent;
+}
+
+.dark-theme .scroll-bar:vertical .thumb,
+.dark-theme .scroll-bar:horizontal .thumb,
+.dialog-pane.dark-theme .scroll-bar:vertical .thumb,
+.dialog-pane.dark-theme .scroll-bar:horizontal .thumb {
+	-fx-background-color: #7f8c8d;
+	-fx-background-radius: 5;
+}
+
+/* Fix for ScrollPane Viewport in Dark Mode */
+.dark-theme .scroll-pane,
+.dark-theme .scroll-pane > .viewport,
+.dialog-pane.dark-theme .scroll-pane,
+.dialog-pane.dark-theme .scroll-pane > .viewport {
+    -fx-background-color: transparent;
+}

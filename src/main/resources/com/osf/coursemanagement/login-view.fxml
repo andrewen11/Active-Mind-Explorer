@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.*?>
+
+<VBox fx:id="loginRoot" alignment="CENTER" spacing="15.0" styleClass="root-background" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.osf.coursemanagement.controller.LoginController">
+
+    <stylesheets>
+        <URL value="@style.css" />
+    </stylesheets>
+
+    <padding>
+        <Insets bottom="40.0" left="40.0" right="40.0" top="40.0" />
+    </padding>
+
+    <ImageView fx:id="logoImage" pickOnBounds="true" preserveRatio="true">
+        <image>
+             <Image url="@images/login-icon.png"/>
+        </image>
+    </ImageView>
+
+    <VBox alignment="TOP_LEFT" spacing="10" styleClass="card">
+        <VBox.margin>
+            <Insets bottom="0" left="0" right="0" top="10" />
+        </VBox.margin>
+
+        <Label prefHeight="22.0" alignment="CENTER_LEFT" styleClass="field-label" text="Email:">
+            <VBox.margin>
+                <Insets bottom="-3" left="20" right="0" top="0" />
+            </VBox.margin>
+        </Label>
+        <TextField fx:id="txtEmail" accessibleHelp="Enter your email address!" promptText="example: admin@osf.demo" styleClass="text-field">
+            <VBox.margin>
+                <Insets bottom="5" left="0" right="0" top="0" />
+            </VBox.margin>
+        </TextField>
+
+        <Label alignment="CENTER_LEFT" prefHeight="22.0"  styleClass="field-label" text="Password:">
+            <VBox.margin>
+                <Insets bottom="-3" left="20" right="0" top="10" />
+            </VBox.margin>
+        </Label>
+        <PasswordField fx:id="txtPassword" promptText="Example: Pass1234" styleClass="text-field">
+            <VBox.margin>
+                <Insets bottom="10" left="0" right="0" top="0" />
+            </VBox.margin>
+        </PasswordField>
+
+        <Button fx:id="btnLogin" maxWidth="Infinity" mnemonicParsing="false" onAction="#handleLoginButtonAction" styleClass="main-button" text="Login">
+            <VBox.margin>
+                <Insets bottom="15" left="0" right="0" top="15" />
+            </VBox.margin>
+        </Button>
+
+    </VBox>
+
+    <Label fx:id="lblErrorMessage" styleClass="error-label" />
+
+</VBox>

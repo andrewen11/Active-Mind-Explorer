@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox fx:id="splashRoot" alignment="CENTER" spacing="20.0" styleClass="root-background" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.osf.coursemanagement.controller.SplashController">
+
+    <stylesheets>
+        <URL value="@style.css" />
+    </stylesheets>
+
+    <padding>
+        <Insets bottom="40.0" left="40.0" right="40.0" top="40.0" />
+    </padding>
+
+    <!-- Card container similar to login -->
+    <VBox fx:id="splashCard" alignment="CENTER" maxWidth="400" spacing="20" styleClass="card">
+        <padding>
+             <Insets bottom="30" left="30" right="30" top="30" />
+        </padding>
+
+        <ImageView fx:id="splashImage" fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@images/checked.png" />
+            </image>
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
+         <effect>
+            <Glow />
+         </effect>
+        </ImageView>
+
+        <Label style="-fx-font-size: 20px; -fx-font-weight: bold;" text="Authentication Successful!" styleClass="title-label" />
+
+        <Label fx:id="lblWelcome" style="-fx-font-size: 16px;" text="Welcome..." textAlignment="CENTER" styleClass="title-label">
+         <effect>
+            <Glow level="1.0" />
+         </effect></Label>
+
+        <ProgressBar fx:id="progressBar" prefWidth="300" progress="1.0">
+         <effect>
+            <Glow />
+         </effect></ProgressBar>
+    </VBox>
+
+</VBox>

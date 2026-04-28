@@ -1,0 +1,59 @@
+.root-background {
+    -fx-background-color: linear-gradient(to bottom, #39b3e8, #3777e6, #553bf9);
+    -fx-padding: 30;
+}
+
+.card {
+    -fx-background-color: rgba(255, 255, 255, 0.15);
+    -fx-background-radius: 15;
+    -fx-padding: 25;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.25), 20, 0.3, 0, 8);
+
+}
+
+.field-label {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+    -fx-padding: 0 0 2 0;
+}
+
+.title-label {
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+}
+
+.text-field {
+    -fx-background-radius: 20;
+    -fx-background-color: rgba(255,255,255,0.85);
+    -fx-padding: 8 15;
+    -fx-font-weight: bold;
+    -fx-font-style: italic;
+    -fx-font-size: 14px;
+}
+
+.main-button {
+    -fx-background-color: #0078d7;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+    -fx-background-radius: 20;
+    -fx-font-size: 16px;
+    -fx-padding: 10 20;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 4, 0.3, 0, 2);
+}
+
+.main-button:hover {
+    -fx-background-color: #005fa1;
+}
+
+.main-button:pressed {
+    -fx-background-color: #004a80;
+}
+
+.error-label {
+    -fx-text-fill: white;
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+}

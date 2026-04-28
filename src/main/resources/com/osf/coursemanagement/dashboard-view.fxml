@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane fx:id="dashboardRoot" prefHeight="700.0" prefWidth="1100.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.osf.coursemanagement.controller.DashboardController" styleClass="dashboard-root">
+
+    <!-- TOP HEADER -->
+    <top>
+        <HBox fx:id="headerContainer" alignment="CENTER_LEFT" spacing="20" styleClass="header-container">
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+
+            <!-- Left: Image -->
+            <ImageView fx:id="imgGreeting" fitHeight="250.0" fitWidth="250.0" pickOnBounds="true" preserveRatio="true" styleClass="header-image" />
+
+            <!-- Right: Text (Centered Vertically with Image due to HBox alignment) -->
+            <VBox alignment="CENTER_LEFT" spacing="10">
+                <Label fx:id="lblGreeting" styleClass="greeting-header" text="Good Morning, User!" wrapText="true" maxWidth="Infinity"/>
+				<Label fx:id="lblRole" styleClass="role-text" text="Role" />
+                <Label fx:id="lblPlans" styleClass="greeting-text" text="What are your plans for today?" />
+            </VBox>
+
+            <Region HBox.hgrow="ALWAYS" />
+
+            <!-- Right End: Dynamic Logo -->
+            <ImageView fx:id="imgHeaderLogo" fitHeight="150" preserveRatio="true">
+                 <image>
+                    <Image url="@images/logo.png" />
+                 </image>
+            </ImageView>
+        </HBox>
+    </top>
+
+    <!-- CENTER CONTENT -->
+    <center>
+        <VBox spacing="20" alignment="TOP_CENTER">
+			<!-- REMOVED SEARCH BAR AREA -->
+
+            <ScrollPane fitToWidth="true" fitToHeight="true" style="-fx-background-color: transparent; -fx-background: transparent;" VBox.vgrow="ALWAYS" hbarPolicy="NEVER">
+                <content>
+                    <FlowPane fx:id="actionBox" hgap="30" vgap="30" alignment="TOP_CENTER" columnHalignment="CENTER" style="-fx-background-color: transparent;">
+                        <padding>
+                            <Insets top="30" right="30" bottom="30" left="30"/>
+                        </padding>
+
+                        <!-- PANEL 1: USERS -->
+                        <VBox fx:id="panelUsers" styleClass="dashboard-panel" spacing="5">
+                             <ImageView fx:id="iconUsers" fitHeight="80" fitWidth="80" pickOnBounds="true" preserveRatio="true">
+                                <image>
+                                    <Image url="@images/icon_add_user.png" />
+                                </image>
+                            </ImageView>
+                            <Label text="Users" styleClass="panel-title"/>
+
+                            <Button fx:id="btnManageUsers" text="Manage Users" onAction="#goToManageUsers" styleClass="panel-button" maxWidth="Infinity"/>
+                            <Button fx:id="btnStatsUsers" text="User Stats" onAction="#handleStatsUsers" styleClass="panel-button" maxWidth="Infinity"/>
+                        </VBox>
+
+                        <!-- PANEL 2: COURSES -->
+                        <VBox fx:id="panelCourses" styleClass="dashboard-panel" spacing="5">
+                             <ImageView fx:id="iconCourses" fitHeight="80" fitWidth="80" pickOnBounds="true" preserveRatio="true">
+                                <image>
+                                    <Image url="@images/icon_add_course.png" />
+                                </image>
+                            </ImageView>
+                            <Label text="Courses" styleClass="panel-title"/>
+
+                            <Button fx:id="btnManageCourses" text="Manage Courses" onAction="#goToManageCourses" styleClass="panel-button" maxWidth="Infinity"/>
+                            <!-- RENAMED STATS BUTTON -->
+                            <Button fx:id="btnStatsCourses" text="Course Stats" onAction="#handleStatsCourses" styleClass="panel-button" maxWidth="Infinity"/>
+                        </VBox>
+
+                        <!-- PANEL 3: MODULES -->
+                        <VBox fx:id="panelModules" styleClass="dashboard-panel" spacing="5">
+                             <ImageView fx:id="iconModules" fitHeight="80" fitWidth="80" pickOnBounds="true" preserveRatio="true">
+                                <image>
+                                    <Image url="@images/icon_add_module.png" />
+                                </image>
+                            </ImageView>
+                            <Label text="Modules" styleClass="panel-title"/>
+
+                            <Button fx:id="btnManageModules" text="Manage Modules" onAction="#goToManageModules" styleClass="panel-button" maxWidth="Infinity"/>
+                            <Button fx:id="btnStatsModules" text="Module Stats" onAction="#handleStatsModules" styleClass="panel-button" maxWidth="Infinity" />
+                        </VBox>
+
+                        <!-- PANEL 4: PROGRESS -->
+                        <VBox fx:id="panelProgress" styleClass="dashboard-panel" spacing="5">
+                             <ImageView fx:id="iconProgress" fitHeight="80" fitWidth="80" pickOnBounds="true" preserveRatio="true">
+                                <image>
+                                    <Image url="@images/icon_my_courses.png" />
+                                </image>
+                            </ImageView>
+                            <Label text="Progress" styleClass="panel-title"/>
+
+
+                            <Button fx:id="btnLiveAttendance" text="Live Attendance" styleClass="panel-button" maxWidth="Infinity" onAction="#handleLiveAttendance"/>
+                            <Button fx:id="btnBadgeProgress" text="Badge Progress" styleClass="panel-button" maxWidth="Infinity" onAction="#handleBadgeProgress"/>
+                            <Button fx:id="btnStatsProgress" text="Progress Stats" onAction="#handleStatsProgress" styleClass="panel-button" maxWidth="Infinity" />
+                        </VBox>
+
+                    </FlowPane>
+                </content>
+            </ScrollPane>
+        </VBox>
+    </center>
+
+    <!-- BOTTOM: 3-Part Layout -->
+    <bottom>
+        <BorderPane style="-fx-padding: 10 20 10 20; -fx-background-color: transparent;">
+            <!-- LEFT: Theme Toggle (RED STYLE) -->
+            <left>
+                 <Button fx:id="btnThemeToggle" text="🌙 Dark Mode" onAction="#handleThemeToggle" styleClass="action-button, btn-red" BorderPane.alignment="CENTER"/>
+            </left>
+
+            <!-- CENTER: Empty (Logo Moved to Header) -->
+            <center>
+            </center>
+
+            <!-- RIGHT: Logout Button -->
+            <right>
+                <Button fx:id="btnLogout" onAction="#handleLogout" styleClass="action-button, btn-red" text="Logout" BorderPane.alignment="CENTER"/>
+            </right>
+        </BorderPane>
+    </bottom>
+
+</BorderPane>

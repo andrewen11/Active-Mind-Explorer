@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane fx:id="rootPane" styleClass="root-background" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.osf.coursemanagement.controller.CourseManagementController">
+
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="20" styleClass="header-container">
+            <padding>
+                <Insets bottom="20" left="20" right="20" top="20" />
+            </padding>
+            <Label styleClass="greeting-header" text="Course Management" />
+        </HBox>
+    </top>
+
+    <center>
+		<SplitPane fx:id="mainSplitPane" dividerPositions="0.4" style="-fx-background-color: transparent;" BorderPane.alignment="CENTER">
+			<BorderPane.margin>
+				<Insets bottom="0" left="0" right="0" top="20" />
+			</BorderPane.margin>
+			<items>
+				<!-- MASTER: List of Courses -->
+				<AnchorPane fx:id="paneList" minHeight="0.0" minWidth="0.0" styleClass="user-list-container">
+						<ListView fx:id="coursesListView" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+				</AnchorPane>
+
+				<!-- DETAIL: Course Profile -->
+				<AnchorPane fx:id="paneDetails" minHeight="0.0" minWidth="0.0" styleClass="detail-panel-container">
+
+						<VBox fx:id="detailPanel" alignment="TOP_CENTER" spacing="20.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+							<padding>
+								<Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+							</padding>
+
+							<!-- Header: Icon & Name -->
+							<ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+								<image>
+									<Image url="@images/icon_courses.png" />
+								</image>
+							</ImageView>
+							<Label fx:id="lblDetailName" style="-fx-font-size: 24px; -fx-font-weight: bold;" text="Course Name" />
+
+							<!-- Info Grid -->
+							<GridPane alignment="CENTER" hgap="20.0" vgap="15.0">
+								<columnConstraints>
+									<ColumnConstraints halignment="RIGHT" minWidth="100.0" />
+									<ColumnConstraints halignment="LEFT" minWidth="250.0" />
+								</columnConstraints>
+
+								<Label style="-fx-font-weight: bold; -fx-text-fill: #7f8c8d;" text="Description:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+								<Label fx:id="lblDetailDescription" text="Lorem ipsum..." wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+								<Label style="-fx-font-weight: bold; -fx-text-fill: #7f8c8d;" text="Duration:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+								<Label fx:id="lblDetailDuration" style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-padding: 3 8 3 8; -fx-background-radius: 10;" text="5 Weeks" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+								<Separator GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="2" />
+
+								<Label style="-fx-font-weight: bold; -fx-text-fill: #7f8c8d;" text="Enrolled Users:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+								<Label fx:id="lblDetailEnrolments" style="-fx-text-fill: #e67e22; -fx-font-size: 18px; -fx-font-weight: bold;" text="0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+
+								<Label style="-fx-font-weight: bold; -fx-text-fill: #7f8c8d;" text="Modules:" GridPane.columnIndex="0" GridPane.rowIndex="4" GridPane.valignment="TOP" />
+								<Label fx:id="lblDetailModules" text="-" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+
+							</GridPane>
+
+						</VBox>
+
+						<!-- Placeholder Text (when no selection) -->
+						<Label fx:id="lblPlaceholder" alignment="CENTER" style="-fx-text-fill: #95a5a6; -fx-font-size: 16px;" text="Select a course to view details" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+
+
+				</AnchorPane>
+			</items>
+		</SplitPane>
+    </center>
+
+    <bottom>
+        <VBox alignment="CENTER" spacing="20" style="-fx-padding: 20;">
+            <HBox alignment="CENTER" spacing="20">
+                <Button fx:id="btnAddCourse" onAction="#handleAddCourse" styleClass="outline-button" text="Add Course" />
+                <Button fx:id="btnEditCourse" onAction="#handleEditCourse" styleClass="outline-button" text="View / Update Course" />
+                <Button fx:id="btnDeleteCourse" onAction="#handleDeleteCourse" styleClass="outline-button" text="Delete Course" />
+            </HBox>
+            <HBox alignment="CENTER_LEFT" spacing="20" VBox.vgrow="NEVER">
+                 <Button onAction="#handleBack" styleClass="action-button" text="← Back to Dashboard" />
+                 <Region HBox.hgrow="ALWAYS" />
+                 <Button fx:id="btnThemeToggle" onAction="#handleThemeToggle" styleClass="action-button" text="Light / Dark Mode" />
+            </HBox>
+        </VBox>
+    </bottom>
+
+</BorderPane>

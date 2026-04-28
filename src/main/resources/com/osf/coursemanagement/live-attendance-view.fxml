@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane fx:id="rootPane" styleClass="root-background" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.osf.coursemanagement.controller.LiveAttendanceController">
+
+    <!-- TOP HEADER -->
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="20" styleClass="header-container">
+            <padding>
+                <Insets bottom="20" left="20" right="20" top="20" />
+            </padding>
+            <Label styleClass="greeting-header" text="Live Attendance Manager" />
+        </HBox>
+    </top>
+
+    <!-- CENTER CONTENT -->
+    <center>
+        <SplitPane dividerPositions="0.35" style="-fx-background-color: transparent;">
+            <BorderPane.margin>
+                <Insets bottom="0" left="0" right="0" top="20" />
+            </BorderPane.margin>
+            <items>
+
+                <!-- LEFT PANEL: Selection (Direct VBox) -->
+                <VBox spacing="15.0" styleClass="sidebar-section">
+                    <padding>
+                        <Insets top="10" right="10" bottom="10" left="10" />
+                    </padding>
+
+                    <Label styleClass="field-label" text="Select Course:" />
+                    <ComboBox styleClass="combo-box" fx:id="comboCourses" maxWidth="Infinity" promptText="Select a course..." />
+
+                    <Label styleClass="field-label" text="Live Sessions:" />
+                    <ListView fx:id="listSessions" styleClass="custom-list-view" VBox.vgrow="ALWAYS" />
+                </VBox>
+
+                <!-- RIGHT PANEL: Details (StackPane for overlay logic) -->
+                <!-- Using StackPane to easily overlay Placeholder vs Content -->
+                <StackPane styleClass="detail-panel-container">
+
+                    <!-- Content View -->
+                    <VBox fx:id="detailsContainer" alignment="TOP_LEFT" spacing="15.0" visible="false">
+                        <padding>
+                            <Insets top="20" right="20" bottom="20" left="20" />
+                        </padding>
+
+                        <Label fx:id="lblSessionTheme" styleClass="title_label" text="Session Theme Title" wrapText="true" />
+                        <Label fx:id="lblCourseName" style="-fx-font-weight: bold; -fx-font-size: 14px;" text="Course Name" textFill="#553bf9" />
+
+                        <VBox spacing="5.0">
+                            <Label styleClass="field_label2" text="Date:" />
+                            <Label fx:id="lblDate" text="2025-01-01" />
+                        </VBox>
+
+                        <VBox spacing="5.0">
+                            <Label styleClass="field_label2" text="Trainer:" />
+                            <Label fx:id="lblTrainer" text="Trainer Name" />
+                        </VBox>
+
+                        <VBox spacing="5.0">
+                            <Label styleClass="field_label2" text="Participants:" />
+                            <Label fx:id="lblParticipants" text="12" />
+                        </VBox>
+
+                        <VBox spacing="5.0" VBox.vgrow="SOMETIMES">
+                            <Label styleClass="field_label2" text="Description:" />
+                            <Label fx:id="lblDescription" text="Session details..." wrapText="true" />
+                        </VBox>
+
+                        <Button fx:id="btnViewParticipants" maxWidth="Infinity" mnemonicParsing="false" onAction="#handleViewParticipants" styleClass="action-button" text="View Participants and Results" />
+                    </VBox>
+
+                    <!-- Placeholder View -->
+                    <Label fx:id="lblPlaceholder" alignment="CENTER" text="Select a session to view details" textFill="#7f8c8d">
+                        <font>
+                            <Font size="16.0" />
+                        </font>
+                    </Label>
+                </StackPane>
+            </items>
+        </SplitPane>
+    </center>
+
+    <!-- BOTTOM FOOTER -->
+    <bottom>
+        <VBox alignment="CENTER" spacing="20" style="-fx-padding: 20;">
+            <HBox alignment="CENTER" spacing="20">
+                <Button fx:id="btnAddSession" onAction="#handleAddSession" styleClass="outline-button" text="Add Session" />
+                <Button fx:id="btnUpdateSession" onAction="#handleUpdateSession" styleClass="outline-button" text="Update Session" />
+                <Button fx:id="btnRemoveSession" onAction="#handleRemoveSession" styleClass="outline-button" text="Remove Session" />
+            </HBox>
+            <HBox alignment="CENTER_LEFT" spacing="20" VBox.vgrow="NEVER">
+                 <Button onAction="#handleBack" styleClass="action-button" text="← Back to Dashboard" />
+                 <Region HBox.hgrow="ALWAYS" />
+                 <Button fx:id="btnThemeToggle" onAction="#handleThemeToggle" styleClass="action-button" text="Light / Dark Mode" />
+            </HBox>
+        </VBox>
+    </bottom>
+
+</BorderPane>

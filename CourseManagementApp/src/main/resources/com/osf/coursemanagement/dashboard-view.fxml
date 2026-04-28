@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane prefHeight="700.0" prefWidth="1100.0" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.osf.coursemanagement.controller.DashboardController">
+
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="20.0" style="-fx-background-color: #34495e; -fx-padding: 10;">
+            <Label text="Course Management Console" textFill="WHITE" style="-fx-font-size: 20px;" />
+            <Label fx:id="lblWelcomeMessage" textFill="#bdc3c7" />
+            <Region HBox.hgrow="ALWAYS" /> <Button text="Logout" fx:id="btnLogout" onAction="#handleLogout" />
+        </HBox>
+    </top>
+
+    <center>
+        <TabPane side="LEFT" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <tabs>
+                <Tab text="Users &amp; Access" closable="false">
+                    <content>
+                        <VBox>
+                            <Label text="User Management Table Here (CRUD)" />
+                        </VBox>
+                    </content>
+                </Tab>
+                <Tab text="Courses &amp; Modules" closable="false">
+                    <content>
+                        <VBox>
+                            <Label text="Courses Table Here" />
+                        </VBox>
+                    </content>
+                </Tab>
+                <Tab text="Attendance &amp; Reports" closable="false">
+                    <content>
+                        <VBox>
+                            <Label text="Reports and Progress Data Here" />
+                        </VBox>
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+    </center>
+
+</BorderPane>
