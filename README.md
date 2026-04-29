@@ -74,7 +74,7 @@ The application requires a Microsoft SQL Server instance.
     ``` 
 3. Use the credentials (email address and password) provided in the database setup (AME.bak backup database file) to log in (e.g., as admin or collaborator). You can *NOT* use the default credentials (admin/admin or student/student) to log in!
    
-**Warning** - Trainees and trainers can not access the app/ Dashboard! Depending on the roles in the database (Admin/Collaborator), you will be redirected to the appropriate dashboard. You can find more details in the "How to Use the Application" section.
+   **Warning** - Trainees and trainers can not access the app/ Dashboard! Depending on the roles in the database (Admin/Collaborator), you will be redirected to the appropriate dashboard. You can find more details in the "How to Use the Application" section.
 
 ---
 
@@ -105,8 +105,9 @@ Administrators have full access to all features in the application:
 #### Collaborator workflow
 Collaborators have restricted access, focused solely on managing live sessions:
 1. **Login:** Access the dashboard using a Collaborator account.
-2. **Live sessions:** View assigned live sessions, track attendance and add/manage session-specific data. They cannot create courses, modules, or access administrative statistics. 
-**Warning** - You may encounter some optimisation issues regarding the Collaborator dashboard UI, in terms of object scaling. 
+2. **Live sessions:** View assigned live sessions, track attendance and add/manage session-specific data. They cannot create courses, modules, or access administrative statistics.
+   
+   **Warning** - You may encounter some optimisation issues regarding the Collaborator dashboard UI, in terms of object scaling. 
 ---
 
 ##  Project structure
