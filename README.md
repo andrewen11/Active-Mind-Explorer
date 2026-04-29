@@ -72,7 +72,8 @@ The application requires a Microsoft SQL Server instance.
    ```bash
    .\mvnw clean javafx:run 
     ``` 
-3. Use the credentials (email address and password) provided in the database setup (AME.bak backup database file) to log in (e.g., as admin or collaborator). You can NOT use the default credentials (admin/admin or student/student) to log in!
+3. Use the credentials (email address and password) provided in the database setup (AME.bak backup database file) to log in (e.g., as admin or collaborator). You can *NOT* use the default credentials (admin/admin or student/student) to log in!
+   
 **Warning** - Trainees and trainers can not access the app/ Dashboard! Depending on the roles in the database (Admin/Collaborator), you will be redirected to the appropriate dashboard. You can find more details in the "How to Use the Application" section.
 
 ---
@@ -120,7 +121,7 @@ CourseManagementApp/
 │   └── resources/          # FXML views, CSS styles (Dark/Light mode)
 ├── AME.bak                 # SQL database and records
 ├── pom.xml                 # Maven configuration for the Client
-├── README.md               # Project documentation (for more information, please view the App presentation (EN/RO version) pdf files
+├── README.md               # Project documentation (for more information, please view the App presentation (EN/RO version) PDF files
 └── [other files/ folders]
 ```
 
