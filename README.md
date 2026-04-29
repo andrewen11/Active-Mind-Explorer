@@ -148,5 +148,6 @@ CourseManagementApp/
 ![Badges and Progress](img/badge-progress-enroll.png)
 
 This project was created and developed for educational purposes. 
+More information is provided in the PDF application documents (available in both English and Romanian)
 
 Andrei Valentin Bălălău - January 2026
